@@ -6,7 +6,7 @@
 /**
  * @description
  * Returns the sizePicker
- * element within the HTML
+ * within the HTML
  */
 function getSizePicker() {
     // https://mzl.la/3YiJCMV 1/26/2023
@@ -25,7 +25,7 @@ function getTable() {
 /**
  * @description
  *  Returns the colorPicker
- *  element within HTML
+ *  within HTML
  */
 function getColorPicker() {
     return document.querySelector("#colorPicker");
@@ -34,8 +34,8 @@ function getColorPicker() {
 /**
  * @description clears, reestablishes grid of squares
  * based on user input of rows and columns 
- * @param {} row 
- * @param {*} col 
+ * @param {int} row 
+ * @param {int} col 
  */
 function makeGrid(row, col) {
     clearGrid();
