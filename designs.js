@@ -1,18 +1,42 @@
-// Utilized https://www.jslint.com
-// For styling/formatting corrections
+/** 
+  * Utilized https://www.jslint.com
+  * For styling/formatting corrections
+*/
+
+/**
+ * @description
+ * Returns the sizePicker
+ * element within the HTML
+ */
 function getSizePicker() {
     // https://mzl.la/3YiJCMV 1/26/2023
     return document.querySelector("#sizePicker");
 }
 
+/**
+ * @description
+ * Returns the table with the ID
+ * #pixelCanvas
+ */
 function getTable() {
     return document.querySelector("#pixelCanvas");
 }
 
+/**
+ * @description
+ *  Returns the colorPicker
+ *  element within HTML
+ */
 function getColorPicker() {
     return document.querySelector("#colorPicker");
 }
 
+/**
+ * @description clears, reestablishes grid of squares
+ * based on user input of rows and columns 
+ * @param {} row 
+ * @param {*} col 
+ */
 function makeGrid(row, col) {
     clearGrid();
     reinstateGrid();
@@ -27,12 +51,23 @@ function makeGrid(row, col) {
     }
 }
 
+/**
+ * @description
+ * Removes the table element with ID
+ * #pixelCanvas
+ */
 function clearGrid() {
     var table = document.querySelector("#pixelCanvas");
     // https://bit.ly/3x9dEXJ 2/2/2023
     table.remove();
 }
 
+/**
+ * @description 
+ * Select table, assign ID
+ * of #pixelCanvas and
+ * add back to document
+ */
 function reinstateGrid() {
     // https://bit.ly/3K1BZGF 2/09/2023
     var table = document.createElement("table");
@@ -44,13 +79,13 @@ function reinstateGrid() {
 }
 
 let sizePicker = getSizePicker();
-sizePicker.addEventListener("submit", function(event) {
+sizePicker.addEventListener("submit", function(event) { // Add event listener for 'submit' action on size Picker
     // https://bit.ly/3HMU8Fb 2/09/2023
-    event.preventDefault();
-    makeGrid(sizePicker.inputWidth.value, sizePicker.inputHeight.value);
+    event.preventDefault(); // Prevents refreshing of page after form submit
+    makeGrid(sizePicker.inputWidth.value, sizePicker.inputHeight.value); // Make Grid with user inputs
 })
 
 let colorPicker = getColorPicker();
-colorPicker.addEventListener("input", function() {
+colorPicker.addEventListener("input", function() { // Add event listerner on color Picker
     return colorPicker.value;
 })
